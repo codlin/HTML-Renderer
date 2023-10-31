@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RKeyEvent" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAACEAAAAAAAAAAAAAAAAAKAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\Entities\RKeyEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RMouseEvent" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\Entities\RMouseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RAdapter" Collapsed="true">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DCEAAAAgUIAAYARCAAgCAAAIAAgEKICAAASwJgiRAAA=</HashCode>
+      <FileName>Adapters\RAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RBrush" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RBrush.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RContextMenu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAgAAAAAAAAAgAAEAAAAIAIAAAAAAAA=</HashCode>
+      <FileName>Adapters\RContextMenu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RControl" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABEgAAAAgIAAAACAAAAAAAAAAAAgAAAAAAEABA=</HashCode>
+      <FileName>Adapters\RControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RFont" Collapsed="true">
+    <Position X="13.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAgAAAAAAAAAAEAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RFont.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RFontFamily" Collapsed="true">
+    <Position X="15.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RFontFamily.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RGraphics" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhBIABAUCDAAIAAAAAAAAAAJAIAIAAAIAkSAAAABCBA=</HashCode>
+      <FileName>Adapters\RGraphics.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RGraphicsPath.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RImage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RImage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Adapters.RPen" Collapsed="true">
+    <Position X="11.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\RPen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.CssData" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAAABAAAAAAAACAAAAAAAgAAAAgAIABAAAAABA=</HashCode>
+      <FileName>Core\CssData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.CssDefaults" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Core\CssDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.HtmlContainerInt" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>LASAJAEEULxw0KLBZQKQAgEIWBDQxEQIFmAYHIBgGpA=</HashCode>
+      <FileName>Core\HtmlContainerInt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.HtmlRendererUtils" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Core\HtmlRendererUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssBox" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AxgwwDILPGiARBAWCIJEkAgAEA6DCaZOVBAyDAQoLiA=</HashCode>
+      <FileName>Core\Dom\CssBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssBoxFrame" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EJAgACAACKAUQAQAoAhAAAAAQAgAAAgAEAEUBAAAAAE=</HashCode>
+      <FileName>Core\Dom\CssBoxFrame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssBoxHr" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Dom\CssBoxHr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssBoxImage" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAAAKAAAAAAAABAAAAAQAAAABAAAAAEBAAAAAA=</HashCode>
+      <FileName>Core\Dom\CssBoxImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssBoxProperties" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>2ciLfjL3182vhhBtCuYyK8YseTf/m78XuyBojId4Nrs=</HashCode>
+      <FileName>Core\Dom\CssBoxProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssLayoutEngine" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAABAAQAAAEAACAAIAAAAAAAAQAogIRyAAAAAAAA=</HashCode>
+      <FileName>Core\Dom\CssLayoutEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssLayoutEngineTable" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAKQBQAEAgACQABAIIgSEEATRIADAAgJGBEJAIAAAgA=</HashCode>
+      <FileName>Core\Dom\CssLayoutEngineTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssLength" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAIAAIAEIEAAACBABAAAAAAIBAAAAARAAAY=</HashCode>
+      <FileName>Core\Dom\CssLength.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssLineBox" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAhAAIAAQAECAAAAAIAAAAAAgAEAARAAAEgQAA=</HashCode>
+      <FileName>Core\Dom\CssLineBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssRect" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIBAAQAQQEAAAQAEgAAAA8IZQACASBCEAEQAI=</HashCode>
+      <FileName>Core\Dom\CssRect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssRectImage" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAEAAIAAAAAAAAAQJAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Dom\CssRectImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssRectWord" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAGAACAAAAAAAAUIAAIAAAACAAAAAA=</HashCode>
+      <FileName>Core\Dom\CssRectWord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssSpacingBox" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAADAAAAAQAAAAAAQAAAAAgAAA=</HashCode>
+      <FileName>Core\Dom\CssSpacingBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.HoverBoxBlock" Collapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Core\Dom\HoverBoxBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Dom.HtmlTag" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAABAABAGAACAAAQQAAgAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Dom\HtmlTag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.CssBlock" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAEAAEgAIAAAgQAAAAAZAAAQAAAAACABA=</HashCode>
+      <FileName>Core\Entities\CssBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadEventArgs" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAIAAAACAAAAAAAQAAAAAAAQAAIAAABAQAA=</HashCode>
+      <FileName>Core\Entities\HtmlImageLoadEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAGBAAAAAAQAAAAAAAAAAAAQABAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlLinkClickedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedException" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlLinkClickedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRefreshEventArgs" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlRefreshEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorEventArgs" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQEAAAAAAAAAAAAAAAAEQBAIAAAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlRenderErrorEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlScrollEventArgs" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAYAA=</HashCode>
+      <FileName>Core\Entities\HtmlScrollEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlStylesheetLoadEventArgs" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgMAAAAIABAACAAAACAAQAAAAAAAAAAJAAAAAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlStylesheetLoadEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Entities.LinkElementData&lt;T&gt;" Collapsed="true">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAAEAABAAAAAAAQgAAFAAAAAACAAAAA=</HashCode>
+      <FileName>Core\Entities\LinkElementData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.BackgroundImageDrawHandler" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Core\Handlers\BackgroundImageDrawHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.BordersDrawHandler" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAIAAAAAAAAAAAAAAIAgEAAACAAEIAAEAAAAA=</HashCode>
+      <FileName>Core\Handlers\BordersDrawHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.ContextMenuHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABgACEAAAJIAAkAAEAAlBAAQAAJAAACACADIAI=</HashCode>
+      <FileName>Core\Handlers\ContextMenuHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.FontsHandler" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAIACAAACAAQIAAAAAAAAAAAAAggABBA=</HashCode>
+      <FileName>Core\Handlers\FontsHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.ImageDownloader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAASAAAAAAAAABAAAAIAAEAQAAACIAAA=</HashCode>
+      <FileName>Core\Handlers\ImageDownloader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.ImageLoadHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAEQAAACAEIASggAIBAIAAAgAgQBAAAQAAAAAYAIA=</HashCode>
+      <FileName>Core\Handlers\ImageLoadHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.SelectionHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBABVBBAADAwBECEBgABAAASAEBBKIEAAQBgAAUAAiA=</HashCode>
+      <FileName>Core\Handlers\SelectionHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Handlers.StylesheetLoadHandler" Collapsed="true">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAACAAAQAAAA=</HashCode>
+      <FileName>Core\Handlers\StylesheetLoadHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Parse.CssParser" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECFAEAiAAhAAgIQBAAgACEAAAIAgAQYCFABwQAJABA=</HashCode>
+      <FileName>Core\Parse\CssParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Parse.CssValueParser" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UUgQAAAAgAAAgAAAIAAAAAEAAAAAAAIAAAFQASAIABA=</HashCode>
+      <FileName>Core\Parse\CssValueParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Parse.DomParser" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgASAAABAAAwDAGGAMAACABAApAAACAQAAAABAE=</HashCode>
+      <FileName>Core\Parse\DomParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Parse.HtmlParser" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAAgAAAAA=</HashCode>
+      <FileName>Core\Parse\HtmlParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Parse.RegexParserUtils" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAIAAAEAAEAAEAAAQAAAAAAAAACBEDEJAAgABA=</HashCode>
+      <FileName>Core\Parse\RegexParserUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.ArgChecker" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAARAAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>Core\Utils\ArgChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.CommonUtils" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIBAIEAIABEQAAiCAAAAIgAECAAAAAAAAAggKEEASAE=</HashCode>
+      <FileName>Core\Utils\CommonUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.CssConstants" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wCgOkUhMxUGpATCBVeAQRhB0VQhPCAEIiBG5QiV8qOU=</HashCode>
+      <FileName>Core\Utils\CssConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.CssUtils" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAACAQAAAAAAAAAAAAEAAQAAAAAAAAA=</HashCode>
+      <FileName>Core\Utils\CssUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.DomUtils" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAMQQAAAAAAIQAQAGgCAwAEAAABJJAEAACAAAgCQ=</HashCode>
+      <FileName>Core\Utils\DomUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.HtmlConstants" Collapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AApCACAwBAAAgQCgIEoARUAAAQECAABUHQCmoAAKACA=</HashCode>
+      <FileName>Core\Utils\HtmlConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.HtmlUtils" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgAQAAAAAAABAAAIAAQAAQAAABAAAAAA=</HashCode>
+      <FileName>Core\Utils\HtmlUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.RenderUtils" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAQIAAAAAAAAAAAEAAEAAAAAAA=</HashCode>
+      <FileName>Core\Utils\RenderUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.Core.Utils.SubString" Collapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBQAAAAAEAAAEAECAAkAIBAAAAAAAAABAACAAAAAAA=</HashCode>
+      <FileName>Core\Utils\SubString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor" Collapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBFAEAAAAAAAEAEgAIAAAAABAAAgIAAAAAIKAEAAyA=</HashCode>
+      <FileName>Adapters\Entities\RColor.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint" Collapsed="true">
+    <Position X="13.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAAIAAQAAAAEwAMCAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
+      <FileName>Adapters\Entities\RPoint.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RRect" Collapsed="true">
+    <Position X="15.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIBASAgAAEgAIUAEAAABAYAIAACACAAQAQ4iA=</HashCode>
+      <FileName>Adapters\Entities\RRect.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize" Collapsed="true">
+    <Position X="17" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAgABCCAAAAEwAMCAEAAABAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Adapters\Entities\RSize.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TheArtOfDev.HtmlRenderer.Core.Entities.CssBlockSelectorItem" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIIAAAAAAAAAAAAAAIAAAAAAABA=</HashCode>
+      <FileName>Core\Entities\CssBlockSelectorItem.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle" Collapsed="true">
+    <Position X="17" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAAAAAAAAAAAAAAAACAAAAAAoAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\Entities\RDashStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle" Collapsed="true">
+    <Position X="18.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAACAAAIAAAAAAEAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Adapters\Entities\RFontStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Core.Dom.Border" Collapsed="true">
+    <Position X="10" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Core\Dom\Border.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Core.Dom.CssUnit" Collapsed="true">
+    <Position X="11.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgUAgAAAAAABAAAAAAAAACAAAAQAAAEAAAA=</HashCode>
+      <FileName>Core\Dom\CssUnit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlGenerationStyle" Collapsed="true">
+    <Position X="13.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAA=</HashCode>
+      <FileName>Core\Entities\HtmlGenerationStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType" Collapsed="true">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAGAAAAAAAFAIAAAAAAAIAAk=</HashCode>
+      <FileName>Core\Entities\HtmlRenderErrorType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadCallback" Collapsed="true">
+    <Position X="17" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Core\Entities\HtmlImageLoadEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.Core.Handlers.DownloadFileAsyncCallback" Collapsed="true">
+    <Position X="15.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAABAAAAAAAAAAAAACAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Core\Handlers\ImageDownloader.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.Core.Utils.ActionInt&lt;T&gt;" Collapsed="true">
+    <Position X="10" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Utils\CommonUtils.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.Core.Utils.ActionInt&lt;T1, T2&gt;" Collapsed="true">
+    <Position X="11.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Utils\CommonUtils.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.Core.Utils.ActionInt&lt;T1, T2, T3&gt;" Collapsed="true">
+    <Position X="13.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAEAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Utils\CommonUtils.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.BrushAdapter">
+    <Position X="16" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\BrushAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.ContextMenuAdapter">
+    <Position X="13.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAoAAAAAAAAAgAAEAAAAIAIAAAAAAAA=</HashCode>
+      <FileName>Adapters\ContextMenuAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.ControlAdapter">
+    <Position X="16" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABADEgAAAAgAAAAACAAAAAAAAAAAAgAAAAAAEAAA=</HashCode>
+      <FileName>Adapters\ControlAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.FontAdapter">
+    <Position X="13.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAABAABAKAgAAAAAAAAQAEAACAAAAIAAAACAICAAA=</HashCode>
+      <FileName>Adapters\FontAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.FontFamilyAdapter">
+    <Position X="13.75" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\FontFamilyAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.GraphicsAdapter">
+    <Position X="18" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AhAIAJAUADAAIAAAAAAAABABAAAIAAAIAECAAAABAAA=</HashCode>
+      <FileName>Adapters\GraphicsAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.GraphicsPathAdapter">
+    <Position X="18" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACQAAAAAAEAAAAAAAAEAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Adapters\GraphicsPathAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.ImageAdapter">
+    <Position X="18" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAEAAAAAAQBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\ImageAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.PenAdapter">
+    <Position X="16" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACCAAQAAAAAAAAAAAAgAAEAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Adapters\PenAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Adapters.WpfAdapter">
+    <Position X="10.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>CAEEAAAAAAAAYAAAAAgAAAAAAAAAIIAAQAAhJgAQAEA=</HashCode>
+      <FileName>Adapters\WpfAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.HtmlContainer" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>IAAABAAEQDRAQASJQQIAAAAISACAREAABkAAAABgEgA=</HashCode>
+      <FileName>HtmlContainer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.HtmlControl">
+    <Position X="2" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>oYAAAACoQVAgQAAJYQAAiAgAEBYARAAANAAAKCTiPgA=</HashCode>
+      <FileName>HtmlControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_htmlContainer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.HtmlLabel">
+    <Position X="0.5" Y="12.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAGAACAAAAAAAAAAAAAACAAAAAAAAAEAAAAIAAAAAA=</HashCode>
+      <FileName>HtmlLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.HtmlPanel">
+    <Position X="3.75" Y="12.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAQEAAAAAAAAAQSAAAAAgIAQAAoKAAAAAAABIEBCACA=</HashCode>
+      <FileName>HtmlPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.HtmlRender">
+    <Position X="6.5" Y="9.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIAACAAAAAAAAAAAAgAAEABAQAQgAAAA=</HashCode>
+      <FileName>HtmlRender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.RoutedEventArgs&lt;T&gt;">
+    <Position X="10.75" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoutedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Utilities.ClipboardHelper">
+    <Position X="10.75" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAAQAAAAAAAAAAAAAAAAAAAQgAAQAACAAAABAAA=</HashCode>
+      <FileName>Utilities\ClipboardHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheArtOfDev.HtmlRenderer.WPF.Utilities.Utils">
+    <Position X="13.75" Y="11" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="TheArtOfDev.HtmlRenderer.WPF.RoutedEventHandler&lt;T&gt;">
+    <Position X="10.75" Y="11" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoutedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
