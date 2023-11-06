@@ -19,8 +19,7 @@ using System.Windows.Media;
 using TheArtOfDev.HtmlRenderer.Core;
 using TheArtOfDev.HtmlRenderer.Core.Entities;
 
-namespace TheArtOfDev.HtmlRenderer.WPF
-{
+namespace TheArtOfDev.HtmlRenderer.WPF {
     /// <summary>
     /// Provides HTML rendering using the text property.<br/>
     /// WPF control that will render html content in it's client rectangle.<br/>
@@ -51,8 +50,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
     /// Raised when an error occurred during html rendering.<br/>
     /// </para>
     /// </summary>
-    public class HtmlControl : Control
-    {
+    public class HtmlControl : Control {
         #region Fields and Consts
 
         /// <summary>
@@ -94,8 +92,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Creates a new HtmlPanel and sets a basic css for it's styling.
         /// </summary>
-        protected HtmlControl()
-        {
+        protected HtmlControl() {
             // shitty WPF rendering, have no idea why this actually makes everything sharper =/
             SnapsToDevicePixels = false;
 
@@ -112,8 +109,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Raised when the set html document has been fully loaded.<br/>
         /// Allows manipulation of the html dom, scroll position, etc.
         /// </summary>
-        public event RoutedEventHandler LoadComplete
-        {
+        public event RoutedEventHandler LoadComplete {
             add { AddHandler(LoadCompleteEvent, value); }
             remove { RemoveHandler(LoadCompleteEvent, value); }
         }
@@ -122,8 +118,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Raised when the user clicks on a link in the html.<br/>
         /// Allows canceling the execution of the link.
         /// </summary>
-        public event RoutedEventHandler<HtmlLinkClickedEventArgs> LinkClicked
-        {
+        public event RoutedEventHandler<HtmlLinkClickedEventArgs> LinkClicked {
             add { AddHandler(LinkClickedEvent, value); }
             remove { RemoveHandler(LinkClickedEvent, value); }
         }
@@ -131,8 +126,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Raised when an error occurred during html rendering.<br/>
         /// </summary>
-        public event RoutedEventHandler<HtmlRenderErrorEventArgs> RenderError
-        {
+        public event RoutedEventHandler<HtmlRenderErrorEventArgs> RenderError {
             add { AddHandler(RenderErrorEvent, value); }
             remove { RemoveHandler(RenderErrorEvent, value); }
         }
@@ -142,8 +136,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// This event allows to provide the stylesheet manually or provide new source (file or uri) to load from.<br/>
         /// If no alternative data is provided the original source will be used.<br/>
         /// </summary>
-        public event RoutedEventHandler<HtmlStylesheetLoadEventArgs> StylesheetLoad
-        {
+        public event RoutedEventHandler<HtmlStylesheetLoadEventArgs> StylesheetLoad {
             add { AddHandler(StylesheetLoadEvent, value); }
             remove { RemoveHandler(StylesheetLoadEvent, value); }
         }
@@ -152,8 +145,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Raised when an image is about to be loaded by file path or URI.<br/>
         /// This event allows to provide the image manually, if not handled the image will be loaded from file or download from URI.
         /// </summary>
-        public event RoutedEventHandler<HtmlImageLoadEventArgs> ImageLoad
-        {
+        public event RoutedEventHandler<HtmlImageLoadEventArgs> ImageLoad {
             add { AddHandler(ImageLoadEvent, value); }
             remove { RemoveHandler(ImageLoadEvent, value); }
         }
@@ -173,8 +165,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// </remarks>
         [Category("Behavior")]
         [Description("If image loading only when visible should be avoided")]
-        public bool AvoidImagesLateLoading
-        {
+        public bool AvoidImagesLateLoading {
             get { return (bool)GetValue(AvoidImagesLateLoadingProperty); }
             set { SetValue(AvoidImagesLateLoadingProperty, value); }
         }
@@ -185,8 +176,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// </summary>
         [Category("Behavior")]
         [Description("Is content selection is enabled for the rendered html.")]
-        public bool IsSelectionEnabled
-        {
+        public bool IsSelectionEnabled {
             get { return (bool)GetValue(IsSelectionEnabledProperty); }
             set { SetValue(IsSelectionEnabledProperty, value); }
         }
@@ -196,8 +186,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// </summary>
         [Category("Behavior")]
         [Description("Is the build-in context menu enabled and will be shown on mouse right click.")]
-        public bool IsContextMenuEnabled
-        {
+        public bool IsContextMenuEnabled {
             get { return (bool)GetValue(IsContextMenuEnabledProperty); }
             set { SetValue(IsContextMenuEnabledProperty, value); }
         }
@@ -207,8 +196,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// </summary>
         [Category("Appearance")]
         [Description("Set base stylesheet to be used by html rendered in the control.")]
-        public string BaseStylesheet
-        {
+        public string BaseStylesheet {
             get { return (string)GetValue(BaseStylesheetProperty); }
             set { SetValue(BaseStylesheetProperty, value); }
         }
@@ -217,8 +205,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Gets or sets the text of this panel
         /// </summary>
         [Description("Sets the html of this control.")]
-        public string Text
-        {
+        public string Text {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
@@ -227,8 +214,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Get the currently selected text segment in the html.
         /// </summary>
         [Browsable(false)]
-        public virtual string SelectedText
-        {
+        public virtual string SelectedText {
             get { return _htmlContainer.SelectedText; }
         }
 
@@ -236,8 +222,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Copy the currently selected html segment with style.
         /// </summary>
         [Browsable(false)]
-        public virtual string SelectedHtml
-        {
+        public virtual string SelectedHtml {
             get { return _htmlContainer.SelectedHtml; }
         }
 
@@ -245,8 +230,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// Get html from the current DOM tree with inline style.
         /// </summary>
         /// <returns>generated html</returns>
-        public virtual string GetHtml()
-        {
+        public virtual string GetHtml() {
             return _htmlContainer != null ? _htmlContainer.GetHtml() : null;
         }
 
@@ -257,16 +241,14 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// </summary>
         /// <param name="elementId">the id of the element to get its rectangle</param>
         /// <returns>the rectangle of the element or null if not found</returns>
-        public virtual Rect? GetElementRectangle(string elementId)
-        {
+        public virtual Rect? GetElementRectangle(string elementId) {
             return _htmlContainer != null ? _htmlContainer.GetElementRectangle(elementId) : null;
         }
 
         /// <summary>
         /// Clear the current selection.
         /// </summary>
-        public void ClearSelection()
-        {
+        public void ClearSelection() {
             if (_htmlContainer != null)
                 _htmlContainer.ClearSelection();
         }
@@ -277,13 +259,11 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Perform paint of the html in the control.
         /// </summary>
-        protected override void OnRender(DrawingContext context)
-        {
+        protected override void OnRender(DrawingContext context) {
             if (Background.Opacity > 0)
                 context.DrawRectangle(Background, null, new Rect(RenderSize));
 
-            if (BorderThickness != new Thickness(0))
-            {
+            if (BorderThickness != new Thickness(0)) {
                 var brush = BorderBrush ?? SystemColors.ControlDarkBrush;
                 if (BorderThickness.Top > 0)
                     context.DrawRectangle(brush, null, new Rect(0, 0, RenderSize.Width, BorderThickness.Top));
@@ -297,12 +277,12 @@ namespace TheArtOfDev.HtmlRenderer.WPF
 
             var htmlWidth = HtmlWidth(RenderSize);
             var htmlHeight = HtmlHeight(RenderSize);
-            if (_htmlContainer != null && htmlWidth > 0 && htmlHeight > 0)
-            {
+            if (_htmlContainer != null && htmlWidth > 0 && htmlHeight > 0) {
                 var windows = Window.GetWindow(this);
-                if (windows != null)
-                {
+                if (windows != null) {
                     // adjust render location to round point so we won't get anti-alias smugness
+                    // 调整呈现的位置，把坐标点调整为圆点，这样我们不会用到抗锯齿功能，因为它非常耗性能
+                    // 获取当前 HtmlControl 元素的 (0, 0) 坐标相对于 windows 原点的坐标
                     var wPoint = TranslatePoint(new Point(0, 0), windows);
                     wPoint.Offset(-(int)wPoint.X, -(int)wPoint.Y);
                     var xTrans = wPoint.X < .5 ? -wPoint.X : 1 - wPoint.X;
@@ -315,8 +295,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
                 _htmlContainer.PerformPaint(context, new Rect(Padding.Left + BorderThickness.Left, Padding.Top + BorderThickness.Top, htmlWidth, htmlHeight));
                 context.Pop();
 
-                if (!_lastScrollOffset.Equals(_htmlContainer.ScrollOffset))
-                {
+                if (!_lastScrollOffset.Equals(_htmlContainer.ScrollOffset)) {
                     _lastScrollOffset = _htmlContainer.ScrollOffset;
                     InvokeMouseMove();
                 }
@@ -326,8 +305,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle mouse move to handle hover cursor and text selection. 
         /// </summary>
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
+        protected override void OnMouseMove(MouseEventArgs e) {
             base.OnMouseMove(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleMouseMove(this, e.GetPosition(this));
@@ -336,8 +314,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle mouse leave to handle cursor change.
         /// </summary>
-        protected override void OnMouseLeave(MouseEventArgs e)
-        {
+        protected override void OnMouseLeave(MouseEventArgs e) {
             base.OnMouseLeave(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleMouseLeave(this);
@@ -346,8 +323,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle mouse down to handle selection. 
         /// </summary>
-        protected override void OnMouseDown(MouseButtonEventArgs e)
-        {
+        protected override void OnMouseDown(MouseButtonEventArgs e) {
             base.OnMouseDown(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleMouseDown(this, e);
@@ -356,8 +332,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle mouse up to handle selection and link click. 
         /// </summary>
-        protected override void OnMouseUp(MouseButtonEventArgs e)
-        {
+        protected override void OnMouseUp(MouseButtonEventArgs e) {
             base.OnMouseUp(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleMouseUp(this, e);
@@ -366,8 +341,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle mouse double click to select word under the mouse. 
         /// </summary>
-        protected override void OnMouseDoubleClick(MouseButtonEventArgs e)
-        {
+        protected override void OnMouseDoubleClick(MouseButtonEventArgs e) {
             base.OnMouseDoubleClick(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleMouseDoubleClick(this, e);
@@ -376,8 +350,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle key down event for selection, copy and scrollbars handling.
         /// </summary>
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
+        protected override void OnKeyDown(KeyEventArgs e) {
             base.OnKeyDown(e);
             if (_htmlContainer != null)
                 _htmlContainer.HandleKeyDown(this, e);
@@ -386,8 +359,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Propagate the LoadComplete event from root container.
         /// </summary>
-        protected virtual void OnLoadComplete(EventArgs e)
-        {
+        protected virtual void OnLoadComplete(EventArgs e) {
             RoutedEventArgs newEventArgs = new RoutedEventArgs<EventArgs>(LoadCompleteEvent, this, e);
             RaiseEvent(newEventArgs);
         }
@@ -395,8 +367,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Propagate the LinkClicked event from root container.
         /// </summary>
-        protected virtual void OnLinkClicked(HtmlLinkClickedEventArgs e)
-        {
+        protected virtual void OnLinkClicked(HtmlLinkClickedEventArgs e) {
             RoutedEventArgs newEventArgs = new RoutedEventArgs<HtmlLinkClickedEventArgs>(LinkClickedEvent, this, e);
             RaiseEvent(newEventArgs);
         }
@@ -404,8 +375,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Propagate the Render Error event from root container.
         /// </summary>
-        protected virtual void OnRenderError(HtmlRenderErrorEventArgs e)
-        {
+        protected virtual void OnRenderError(HtmlRenderErrorEventArgs e) {
             RoutedEventArgs newEventArgs = new RoutedEventArgs<HtmlRenderErrorEventArgs>(RenderErrorEvent, this, e);
             RaiseEvent(newEventArgs);
         }
@@ -413,8 +383,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Propagate the stylesheet load event from root container.
         /// </summary>
-        protected virtual void OnStylesheetLoad(HtmlStylesheetLoadEventArgs e)
-        {
+        protected virtual void OnStylesheetLoad(HtmlStylesheetLoadEventArgs e) {
             RoutedEventArgs newEventArgs = new RoutedEventArgs<HtmlStylesheetLoadEventArgs>(StylesheetLoadEvent, this, e);
             RaiseEvent(newEventArgs);
         }
@@ -422,8 +391,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Propagate the image load event from root container.
         /// </summary>
-        protected virtual void OnImageLoad(HtmlImageLoadEventArgs e)
-        {
+        protected virtual void OnImageLoad(HtmlImageLoadEventArgs e) {
             RoutedEventArgs newEventArgs = new RoutedEventArgs<HtmlImageLoadEventArgs>(ImageLoadEvent, this, e);
             RaiseEvent(newEventArgs);
         }
@@ -431,8 +399,7 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Handle html renderer invalidate and re-layout as requested.
         /// </summary>
-        protected virtual void OnRefresh(HtmlRefreshEventArgs e)
-        {
+        protected virtual void OnRefresh(HtmlRefreshEventArgs e) {
             if (e.Layout)
                 InvalidateMeasure();
             InvalidateVisual();
@@ -441,56 +408,42 @@ namespace TheArtOfDev.HtmlRenderer.WPF
         /// <summary>
         /// Get the width the HTML has to render in (not including vertical scroll iff it is visible)
         /// </summary>
-        protected virtual double HtmlWidth(Size size)
-        {
+        protected virtual double HtmlWidth(Size size) {
             return size.Width - Padding.Left - Padding.Right - BorderThickness.Left - BorderThickness.Right;
         }
 
         /// <summary>
         /// Get the width the HTML has to render in (not including vertical scroll iff it is visible)
         /// </summary>
-        protected virtual double HtmlHeight(Size size)
-        {
+        protected virtual double HtmlHeight(Size size) {
             return size.Height - Padding.Top - Padding.Bottom - BorderThickness.Top - BorderThickness.Bottom;
         }
 
         /// <summary>
         /// call mouse move to handle paint after scroll or html change affecting mouse cursor.
         /// </summary>
-        protected virtual void InvokeMouseMove()
-        {
+        protected virtual void InvokeMouseMove() {
             _htmlContainer.HandleMouseMove(this, Mouse.GetPosition(this));
         }
 
         /// <summary>
         /// Handle when dependency property value changes to update the underline HtmlContainer with the new value.
         /// </summary>
-        private static void OnDependencyProperty_valueChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
-        {
+        private static void OnDependencyProperty_valueChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e) {
             var control = dependencyObject as HtmlControl;
-            if (control != null)
-            {
+            if (control != null) {
                 var htmlContainer = control._htmlContainer;
-                if (e.Property == AvoidImagesLateLoadingProperty)
-                {
+                if (e.Property == AvoidImagesLateLoadingProperty) {
                     htmlContainer.AvoidImagesLateLoading = (bool)e.NewValue;
-                }
-                else if (e.Property == IsSelectionEnabledProperty)
-                {
+                } else if (e.Property == IsSelectionEnabledProperty) {
                     htmlContainer.IsSelectionEnabled = (bool)e.NewValue;
-                }
-                else if (e.Property == IsContextMenuEnabledProperty)
-                {
+                } else if (e.Property == IsContextMenuEnabledProperty) {
                     htmlContainer.IsContextMenuEnabled = (bool)e.NewValue;
-                }
-                else if (e.Property == BaseStylesheetProperty)
-                {
+                } else if (e.Property == BaseStylesheetProperty) {
                     var baseCssData = HtmlRender.ParseStyleSheet((string)e.NewValue);
                     control._baseCssData = baseCssData;
                     htmlContainer.SetHtml(control.Text, baseCssData);
-                }
-                else if (e.Property == TextProperty)
-                {
+                } else if (e.Property == TextProperty) {
                     htmlContainer.ScrollOffset = new Point(0, 0);
                     htmlContainer.SetHtml((string)e.NewValue, control._baseCssData);
                     control.InvalidateMeasure();
@@ -503,48 +456,42 @@ namespace TheArtOfDev.HtmlRenderer.WPF
 
         #region Private event handlers
 
-        private void OnLoadComplete(object sender, EventArgs e)
-        {
+        private void OnLoadComplete(object sender, EventArgs e) {
             if (CheckAccess())
                 OnLoadComplete(e);
             else
                 Dispatcher.Invoke(new Action<HtmlLinkClickedEventArgs>(OnLinkClicked), e);
         }
 
-        private void OnLinkClicked(object sender, HtmlLinkClickedEventArgs e)
-        {
+        private void OnLinkClicked(object sender, HtmlLinkClickedEventArgs e) {
             if (CheckAccess())
                 OnLinkClicked(e);
             else
                 Dispatcher.Invoke(new Action<HtmlLinkClickedEventArgs>(OnLinkClicked), e);
         }
 
-        private void OnRenderError(object sender, HtmlRenderErrorEventArgs e)
-        {
+        private void OnRenderError(object sender, HtmlRenderErrorEventArgs e) {
             if (CheckAccess())
                 OnRenderError(e);
             else
                 Dispatcher.Invoke(new Action<HtmlRenderErrorEventArgs>(OnRenderError), e);
         }
 
-        private void OnStylesheetLoad(object sender, HtmlStylesheetLoadEventArgs e)
-        {
+        private void OnStylesheetLoad(object sender, HtmlStylesheetLoadEventArgs e) {
             if (CheckAccess())
                 OnStylesheetLoad(e);
             else
                 Dispatcher.Invoke(new Action<HtmlStylesheetLoadEventArgs>(OnStylesheetLoad), e);
         }
 
-        private void OnImageLoad(object sender, HtmlImageLoadEventArgs e)
-        {
+        private void OnImageLoad(object sender, HtmlImageLoadEventArgs e) {
             if (CheckAccess())
                 OnImageLoad(e);
             else
                 Dispatcher.Invoke(new Action<HtmlImageLoadEventArgs>(OnImageLoad), e);
         }
 
-        private void OnRefresh(object sender, HtmlRefreshEventArgs e)
-        {
+        private void OnRefresh(object sender, HtmlRefreshEventArgs e) {
             if (CheckAccess())
                 OnRefresh(e);
             else

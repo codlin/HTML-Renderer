@@ -16,20 +16,17 @@ using TheArtOfDev.HtmlRenderer.Adapters;
 using TheArtOfDev.HtmlRenderer.Adapters.Entities;
 using TheArtOfDev.HtmlRenderer.Core.Utils;
 
-namespace TheArtOfDev.HtmlRenderer.Core.Dom
-{
+namespace TheArtOfDev.HtmlRenderer.Core.Dom {
     /// <summary>
     /// Helps on CSS Layout.
     /// </summary>
-    internal static class CssLayoutEngine
-    {
+    internal static class CssLayoutEngine {
         /// <summary>
         /// Measure image box size by the width\height set on the box and the actual rendered image size.<br/>
         /// If no image exists for the box error icon will be set.
         /// </summary>
         /// <param name="imageWord">the image word to measure</param>
-        public static void MeasureImageSize(CssRectImage imageWord)
-        {
+        public static void MeasureImageSize(CssRectImage imageWord) {
             ArgChecker.AssertArgNotNull(imageWord, "imageWord");
             ArgChecker.AssertArgNotNull(imageWord.OwnerBox, "imageWord.OwnerBox");
 
@@ -40,69 +37,49 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             bool hasImageTagHeight = height.Number > 0 && height.Unit == CssUnit.Pixels;
             bool scaleImageHeight = false;
 
-            if (hasImageTagWidth)
-            {
+            if (hasImageTagWidth) {
                 imageWord.Width = width.Number;
-            }
-            else if (width.Number > 0 && width.IsPercentage)
-            {
+            } else if (width.Number > 0 && width.IsPercentage) {
                 imageWord.Width = width.Number * imageWord.OwnerBox.ContainingBlock.Size.Width;
                 scaleImageHeight = true;
-            }
-            else if (imageWord.Image != null)
-            {
+            } else if (imageWord.Image != null) {
                 imageWord.Width = imageWord.ImageRectangle == RRect.Empty ? imageWord.Image.Width : imageWord.ImageRectangle.Width;
-            }
-            else
-            {
+            } else {
                 imageWord.Width = hasImageTagHeight ? height.Number / 1.14f : 20;
             }
 
             var maxWidth = new CssLength(imageWord.OwnerBox.MaxWidth);
-            if (maxWidth.Number > 0)
-            {
+            if (maxWidth.Number > 0) {
                 double maxWidthVal = -1;
-                if (maxWidth.Unit == CssUnit.Pixels)
-                {
+                if (maxWidth.Unit == CssUnit.Pixels) {
                     maxWidthVal = maxWidth.Number;
-                }
-                else if (maxWidth.IsPercentage)
-                {
+                } else if (maxWidth.IsPercentage) {
                     maxWidthVal = maxWidth.Number * imageWord.OwnerBox.ContainingBlock.Size.Width;
                 }
 
-                if (maxWidthVal > -1 && imageWord.Width > maxWidthVal)
-                {
+                if (maxWidthVal > -1 && imageWord.Width > maxWidthVal) {
                     imageWord.Width = maxWidthVal;
                     scaleImageHeight = !hasImageTagHeight;
                 }
             }
 
-            if (hasImageTagHeight)
-            {
+            if (hasImageTagHeight) {
                 imageWord.Height = height.Number;
-            }
-            else if (imageWord.Image != null)
-            {
+            } else if (imageWord.Image != null) {
                 imageWord.Height = imageWord.ImageRectangle == RRect.Empty ? imageWord.Image.Height : imageWord.ImageRectangle.Height;
-            }
-            else
-            {
+            } else {
                 imageWord.Height = imageWord.Width > 0 ? imageWord.Width * 1.14f : 22.8f;
             }
 
-            if (imageWord.Image != null)
-            {
+            if (imageWord.Image != null) {
                 // If only the width was set in the html tag, ratio the height.
-                if ((hasImageTagWidth && !hasImageTagHeight) || scaleImageHeight)
-                {
+                if ((hasImageTagWidth && !hasImageTagHeight) || scaleImageHeight) {
                     // Divide the given tag width with the actual image width, to get the ratio.
                     double ratio = imageWord.Width / imageWord.Image.Width;
                     imageWord.Height = imageWord.Image.Height * ratio;
                 }
                 // If only the height was set in the html tag, ratio the width.
-                else if (hasImageTagHeight && !hasImageTagWidth)
-                {
+                else if (hasImageTagHeight && !hasImageTagWidth) {
                     // Divide the given tag height with the actual image height, to get the ratio.
                     double ratio = imageWord.Height / imageWord.Image.Height;
                     imageWord.Width = imageWord.Image.Width * ratio;
@@ -117,8 +94,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="blockBox"></param>
-        public static void CreateLineBoxes(RGraphics g, CssBox blockBox)
-        {
+        public static void CreateLineBoxes(RGraphics g, CssBox blockBox) {
             ArgChecker.AssertArgNotNull(g, "g");
             ArgChecker.AssertArgNotNull(blockBox, "blockBox");
 
@@ -143,14 +119,12 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             FlowBox(g, blockBox, blockBox, limitRight, 0, startx, ref line, ref curx, ref cury, ref maxRight, ref maxBottom);
 
             // if width is not restricted we need to lower it to the actual width
-            if (blockBox.ActualRight >= 90999)
-            {
+            if (blockBox.ActualRight >= 90999) {
                 blockBox.ActualRight = maxRight + blockBox.ActualPaddingRight + blockBox.ActualBorderRightWidth;
             }
 
             //Gets the rectangles for each line-box
-            foreach (var linebox in blockBox.LineBoxes)
-            {
+            foreach (var linebox in blockBox.LineBoxes) {
                 ApplyHorizontalAlignment(g, linebox);
                 ApplyRightToLeft(blockBox, linebox);
                 BubbleRectangles(blockBox, linebox);
@@ -161,8 +135,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             blockBox.ActualBottom = maxBottom + blockBox.ActualPaddingBottom + blockBox.ActualBorderBottomWidth;
 
             // handle limiting block height when overflow is hidden
-            if (blockBox.Height != null && blockBox.Height != CssConstants.Auto && blockBox.Overflow == CssConstants.Hidden && blockBox.ActualBottom - blockBox.Location.Y > blockBox.ActualHeight)
-            {
+            if (blockBox.Height != null && blockBox.Height != CssConstants.Auto && blockBox.Overflow == CssConstants.Hidden && blockBox.ActualBottom - blockBox.Location.Y > blockBox.ActualHeight) {
                 blockBox.ActualBottom = blockBox.Location.Y + blockBox.ActualHeight;
             }
         }
@@ -172,8 +145,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="cell"></param>
-        public static void ApplyCellVerticalAlignment(RGraphics g, CssBox cell)
-        {
+        public static void ApplyCellVerticalAlignment(RGraphics g, CssBox cell) {
             ArgChecker.AssertArgNotNull(g, "g");
             ArgChecker.AssertArgNotNull(cell, "cell");
 
@@ -184,17 +156,13 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             double bottom = cell.GetMaximumBottom(cell, 0f);
             double dist = 0f;
 
-            if (cell.VerticalAlign == CssConstants.Bottom)
-            {
+            if (cell.VerticalAlign == CssConstants.Bottom) {
                 dist = cellbot - bottom;
-            }
-            else if (cell.VerticalAlign == CssConstants.Middle)
-            {
+            } else if (cell.VerticalAlign == CssConstants.Middle) {
                 dist = (cellbot - bottom) / 2;
             }
 
-            foreach (CssBox b in cell.Boxes)
-            {
+            foreach (CssBox b in cell.Boxes) {
                 b.OffsetTop(dist);
             }
 
@@ -239,8 +207,9 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// <param name="cury">Current y coordinate that will be the top of the next word</param>
         /// <param name="maxRight">Maximum right reached so far</param>
         /// <param name="maxbottom">Maximum bottom reached so far</param>
-        private static void FlowBox(RGraphics g, CssBox blockbox, CssBox box, double limitRight, double linespacing, double startx, ref CssLineBox line, ref double curx, ref double cury, ref double maxRight, ref double maxbottom)
-        {
+        private static void FlowBox(RGraphics g, CssBox blockbox, CssBox box, double limitRight,
+            double linespacing, double startx, ref CssLineBox line,
+            ref double curx, ref double cury, ref double maxRight, ref double maxbottom) {
             var startX = curx;
             var startY = cury;
             box.FirstHostingLineBox = line;
@@ -248,8 +217,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             var localMaxRight = maxRight;
             var localmaxbottom = maxbottom;
 
-            foreach (CssBox b in box.Boxes)
-            {
+            foreach (CssBox b in box.Boxes) {
                 double leftspacing = (b.Position != CssConstants.Absolute && b.Position != CssConstants.Fixed) ? b.ActualMarginLeft + b.ActualBorderLeftWidth + b.ActualPaddingLeft : 0;
                 double rightspacing = (b.Position != CssConstants.Absolute && b.Position != CssConstants.Fixed) ? b.ActualMarginRight + b.ActualBorderRightWidth + b.ActualPaddingRight : 0;
 
@@ -258,11 +226,9 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
 
                 curx += leftspacing;
 
-                if (b.Words.Count > 0)
-                {
+                if (b.Words.Count > 0) {
                     bool wrapNoWrapBox = false;
-                    if (b.WhiteSpace == CssConstants.NoWrap && curx > startx)
-                    {
+                    if (b.WhiteSpace == CssConstants.NoWrap && curx > startx) {
                         var boxRight = curx;
                         foreach (var word in b.Words)
                             boxRight += word.FullWidth;
@@ -273,15 +239,13 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
                     if (DomUtils.IsBoxHasWhitespace(b))
                         curx += box.ActualWordSpacing;
 
-                    foreach (var word in b.Words)
-                    {
+                    foreach (var word in b.Words) {
                         if (maxbottom - cury < box.ActualLineHeight)
                             maxbottom += box.ActualLineHeight - (maxbottom - cury);
 
                         if ((b.WhiteSpace != CssConstants.NoWrap && b.WhiteSpace != CssConstants.Pre && curx + word.Width + rightspacing > limitRight
                              && (b.WhiteSpace != CssConstants.PreWrap || !word.IsSpaces))
-                            || word.IsLineBreak || wrapNoWrapBox)
-                        {
+                            || word.IsLineBreak || wrapNoWrapBox) {
                             wrapNoWrapBox = false;
                             curx = startx;
 
@@ -293,8 +257,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
 
                             line = new CssLineBox(blockbox);
 
-                            if (word.IsImage || word.Equals(b.FirstWord))
-                            {
+                            if (word.IsImage || word.Equals(b.FirstWord)) {
                                 curx += leftspacing;
                             }
                         }
@@ -304,8 +267,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
                         word.Left = curx;
                         word.Top = cury;
 
-                        if (!box.IsFixed)
-                        {
+                        if (!box.IsFixed) {
                             word.BreakPage();
                         }
 
@@ -314,15 +276,12 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
                         maxRight = Math.Max(maxRight, word.Right);
                         maxbottom = Math.Max(maxbottom, word.Bottom);
 
-                        if (b.Position == CssConstants.Absolute)
-                        {
+                        if (b.Position == CssConstants.Absolute) {
                             word.Left += box.ActualMarginLeft;
                             word.Top += box.ActualMarginTop;
                         }
                     }
-                }
-                else
-                {
+                } else {
                     FlowBox(g, blockbox, b, limitRight, linespacing, startx, ref line, ref curx, ref cury, ref maxRight, ref maxbottom);
                 }
 
@@ -330,28 +289,24 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             }
 
             // handle height setting
-            if (maxbottom - startY < box.ActualHeight)
-            {
+            if (maxbottom - startY < box.ActualHeight) {
                 maxbottom += box.ActualHeight - (maxbottom - startY);
             }
 
             // handle width setting
-            if (box.IsInline && 0 <= curx - startX && curx - startX < box.ActualWidth)
-            {
+            if (box.IsInline && 0 <= curx - startX && curx - startX < box.ActualWidth) {
                 // hack for actual width handling
                 curx += box.ActualWidth - (curx - startX);
                 line.Rectangles.Add(box, new RRect(startX, startY, box.ActualWidth, box.ActualHeight));
             }
 
             // handle box that is only a whitespace
-            if (box.Text != null && box.Text.IsWhitespace() && !box.IsImage && box.IsInline && box.Boxes.Count == 0 && box.Words.Count == 0)
-            {
+            if (box.Text != null && box.Text.IsWhitespace() && !box.IsImage && box.IsInline && box.Boxes.Count == 0 && box.Words.Count == 0) {
                 curx += box.ActualWordSpacing;
             }
 
             // hack to support specific absolute position elements
-            if (box.Position == CssConstants.Absolute)
-            {
+            if (box.Position == CssConstants.Absolute) {
                 curx = localCurx;
                 maxRight = localMaxRight;
                 maxbottom = localmaxbottom;
@@ -364,20 +319,15 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// <summary>
         /// Adjust the position of absolute elements by letf and top margins.
         /// </summary>
-        private static void AdjustAbsolutePosition(CssBox box, double left, double top)
-        {
+        private static void AdjustAbsolutePosition(CssBox box, double left, double top) {
             left += box.ActualMarginLeft;
             top += box.ActualMarginTop;
-            if (box.Words.Count > 0)
-            {
-                foreach (var word in box.Words)
-                {
+            if (box.Words.Count > 0) {
+                foreach (var word in box.Words) {
                     word.Left += left;
                     word.Top += top;
                 }
-            }
-            else
-            {
+            } else {
                 foreach (var b in box.Boxes)
                     AdjustAbsolutePosition(b, left, top);
             }
@@ -387,17 +337,13 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// Recursively creates the rectangles of the blockBox, by bubbling from deep to outside of the boxes 
         /// in the rectangle structure
         /// </summary>
-        private static void BubbleRectangles(CssBox box, CssLineBox line)
-        {
-            if (box.Words.Count > 0)
-            {
+        private static void BubbleRectangles(CssBox box, CssLineBox line) {
+            if (box.Words.Count > 0) {
                 double x = Single.MaxValue, y = Single.MaxValue, r = Single.MinValue, b = Single.MinValue;
                 List<CssRect> words = line.WordsOf(box);
 
-                if (words.Count > 0)
-                {
-                    foreach (CssRect word in words)
-                    {
+                if (words.Count > 0) {
+                    foreach (CssRect word in words) {
                         // handle if line is wrapped for the first text element where parent has left margin\padding
                         var left = word.Left;
 
@@ -412,11 +358,8 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
                     }
                     line.UpdateRectangle(box, x, y, r, b);
                 }
-            }
-            else
-            {
-                foreach (CssBox b in box.Boxes)
-                {
+            } else {
+                foreach (CssBox b in box.Boxes) {
                     BubbleRectangles(b, line);
                 }
             }
@@ -427,10 +370,8 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="lineBox"></param>
-        private static void ApplyHorizontalAlignment(RGraphics g, CssLineBox lineBox)
-        {
-            switch (lineBox.OwnerBox.TextAlign)
-            {
+        private static void ApplyHorizontalAlignment(RGraphics g, CssLineBox lineBox) {
+            switch (lineBox.OwnerBox.TextAlign) {
                 case CssConstants.Right:
                     ApplyRightAlignment(g, lineBox);
                     break;
@@ -451,18 +392,12 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="blockBox"></param>
         /// <param name="lineBox"></param>
-        private static void ApplyRightToLeft(CssBox blockBox, CssLineBox lineBox)
-        {
-            if (blockBox.Direction == CssConstants.Rtl)
-            {
+        private static void ApplyRightToLeft(CssBox blockBox, CssLineBox lineBox) {
+            if (blockBox.Direction == CssConstants.Rtl) {
                 ApplyRightToLeftOnLine(lineBox);
-            }
-            else
-            {
-                foreach (var box in lineBox.RelatedBoxes)
-                {
-                    if (box.Direction == CssConstants.Rtl)
-                    {
+            } else {
+                foreach (var box in lineBox.RelatedBoxes) {
+                    if (box.Direction == CssConstants.Rtl) {
                         ApplyRightToLeftOnSingleBox(lineBox, box);
                     }
                 }
@@ -473,15 +408,12 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// Applies RTL direction to all the words on the line.
         /// </summary>
         /// <param name="line">the line to apply RTL to</param>
-        private static void ApplyRightToLeftOnLine(CssLineBox line)
-        {
-            if (line.Words.Count > 0)
-            {
+        private static void ApplyRightToLeftOnLine(CssLineBox line) {
+            if (line.Words.Count > 0) {
                 double left = line.Words[0].Left;
                 double right = line.Words[line.Words.Count - 1].Right;
 
-                foreach (CssRect word in line.Words)
-                {
+                foreach (CssRect word in line.Words) {
                     double diff = word.Left - left;
                     double wright = right - diff;
                     word.Left = wright - word.Width;
@@ -494,27 +426,22 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="lineBox"></param>
         /// <param name="box"></param>
-        private static void ApplyRightToLeftOnSingleBox(CssLineBox lineBox, CssBox box)
-        {
+        private static void ApplyRightToLeftOnSingleBox(CssLineBox lineBox, CssBox box) {
             int leftWordIdx = -1;
             int rightWordIdx = -1;
-            for (int i = 0; i < lineBox.Words.Count; i++)
-            {
-                if (lineBox.Words[i].OwnerBox == box)
-                {
+            for (int i = 0; i < lineBox.Words.Count; i++) {
+                if (lineBox.Words[i].OwnerBox == box) {
                     if (leftWordIdx < 0)
                         leftWordIdx = i;
                     rightWordIdx = i;
                 }
             }
 
-            if (leftWordIdx > -1 && rightWordIdx > leftWordIdx)
-            {
+            if (leftWordIdx > -1 && rightWordIdx > leftWordIdx) {
                 double left = lineBox.Words[leftWordIdx].Left;
                 double right = lineBox.Words[rightWordIdx].Right;
 
-                for (int i = leftWordIdx; i <= rightWordIdx; i++)
-                {
+                for (int i = leftWordIdx; i <= rightWordIdx; i++) {
                     double diff = lineBox.Words[i].Left - left;
                     double wright = right - diff;
                     lineBox.Words[i].Left = wright - lineBox.Words[i].Width;
@@ -527,20 +454,16 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="lineBox"></param>
-        private static void ApplyVerticalAlignment(RGraphics g, CssLineBox lineBox)
-        {
+        private static void ApplyVerticalAlignment(RGraphics g, CssLineBox lineBox) {
             double baseline = Single.MinValue;
-            foreach (var box in lineBox.Rectangles.Keys)
-            {
+            foreach (var box in lineBox.Rectangles.Keys) {
                 baseline = Math.Max(baseline, lineBox.Rectangles[box].Top);
             }
 
             var boxes = new List<CssBox>(lineBox.Rectangles.Keys);
-            foreach (CssBox box in boxes)
-            {
+            foreach (CssBox box in boxes) {
                 //Important notes on http://www.w3.org/TR/CSS21/tables.html#height-layout
-                switch (box.VerticalAlign)
-                {
+                switch (box.VerticalAlign) {
                     case CssConstants.Sub:
                         lineBox.SetBaseLine(g, box, baseline + lineBox.Rectangles[box].Height * .5f);
                         break;
@@ -575,8 +498,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="lineBox"></param>
-        private static void ApplyJustifyAlignment(RGraphics g, CssLineBox lineBox)
-        {
+        private static void ApplyJustifyAlignment(RGraphics g, CssLineBox lineBox) {
             if (lineBox.Equals(lineBox.OwnerBox.LineBoxes[lineBox.OwnerBox.LineBoxes.Count - 1]))
                 return;
 
@@ -586,8 +508,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             double availWidth = lineBox.OwnerBox.ClientRectangle.Width - indent;
 
             // Gather text sum
-            foreach (CssRect w in lineBox.Words)
-            {
+            foreach (CssRect w in lineBox.Words) {
                 textSum += w.Width;
                 words += 1f;
             }
@@ -597,13 +518,11 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             double spacing = (availWidth - textSum) / words; //Spacing that will be used
             double curx = lineBox.OwnerBox.ClientLeft + indent;
 
-            foreach (CssRect word in lineBox.Words)
-            {
+            foreach (CssRect word in lineBox.Words) {
                 word.Left = curx;
                 curx = word.Right + spacing;
 
-                if (word == lineBox.Words[lineBox.Words.Count - 1])
-                {
+                if (word == lineBox.Words[lineBox.Words.Count - 1]) {
                     word.Left = lineBox.OwnerBox.ClientRight - word.Width;
                 }
             }
@@ -614,8 +533,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="line"></param>
-        private static void ApplyCenterAlignment(RGraphics g, CssLineBox line)
-        {
+        private static void ApplyCenterAlignment(RGraphics g, CssLineBox line) {
             if (line.Words.Count == 0)
                 return;
 
@@ -624,17 +542,13 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             double diff = right - lastWord.Right - lastWord.OwnerBox.ActualBorderRightWidth - lastWord.OwnerBox.ActualPaddingRight;
             diff /= 2;
 
-            if (diff > 0)
-            {
-                foreach (CssRect word in line.Words)
-                {
+            if (diff > 0) {
+                foreach (CssRect word in line.Words) {
                     word.Left += diff;
                 }
 
-                if (line.Rectangles.Count > 0)
-                {
-                    foreach (CssBox b in ToList(line.Rectangles.Keys))
-                    {
+                if (line.Rectangles.Count > 0) {
+                    foreach (CssBox b in ToList(line.Rectangles.Keys)) {
                         RRect r = line.Rectangles[b];
                         line.Rectangles[b] = new RRect(r.X + diff, r.Y, r.Width, r.Height);
                     }
@@ -647,8 +561,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="line"></param>
-        private static void ApplyRightAlignment(RGraphics g, CssLineBox line)
-        {
+        private static void ApplyRightAlignment(RGraphics g, CssLineBox line) {
             if (line.Words.Count == 0)
                 return;
 
@@ -657,17 +570,13 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             double right = line.OwnerBox.ActualRight - line.OwnerBox.ActualPaddingRight - line.OwnerBox.ActualBorderRightWidth;
             double diff = right - lastWord.Right - lastWord.OwnerBox.ActualBorderRightWidth - lastWord.OwnerBox.ActualPaddingRight;
 
-            if (diff > 0)
-            {
-                foreach (CssRect word in line.Words)
-                {
+            if (diff > 0) {
+                foreach (CssRect word in line.Words) {
                     word.Left += diff;
                 }
 
-                if (line.Rectangles.Count > 0)
-                {
-                    foreach (CssBox b in ToList(line.Rectangles.Keys))
-                    {
+                if (line.Rectangles.Count > 0) {
+                    foreach (CssBox b in ToList(line.Rectangles.Keys)) {
                         RRect r = line.Rectangles[b];
                         line.Rectangles[b] = new RRect(r.X + diff, r.Y, r.Width, r.Height);
                     }
@@ -680,8 +589,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// </summary>
         /// <param name="g"></param>
         /// <param name="line"></param>
-        private static void ApplyLeftAlignment(RGraphics g, CssLineBox line)
-        {
+        private static void ApplyLeftAlignment(RGraphics g, CssLineBox line) {
             //No alignment needed.
 
             //foreach (LineBoxRectangle r in line.Rectangles)
@@ -703,11 +611,9 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
         /// <summary>
         /// todo: optimizate, not creating a list each time
         /// </summary>
-        private static List<T> ToList<T>(IEnumerable<T> collection)
-        {
+        private static List<T> ToList<T>(IEnumerable<T> collection) {
             List<T> result = new List<T>();
-            foreach (T item in collection)
-            {
+            foreach (T item in collection) {
                 result.Add(item);
             }
             return result;
